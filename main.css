@@ -1,0 +1,178 @@
+:root {
+    --title-color: #322153;
+    --primary-color: #34cb79;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: roboto, sans-serif;
+}
+
+body {
+    background: #f0f0f5;
+    -webkit-font-smoothing: antialiased
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Ubuntu, sans-serif;
+    color: var(--title-color);;
+}
+/* BOX MODEL
+
+modelo de caixa
+toda caixa tem
+largura, altura, espaçamento, preenchimento
+boras, cor, fundo, maneira que é vista pelo html (display),
+posicionamento, alinhamentos
+*/
+
+#page-home {
+    height: 100vh;
+    
+    background: url('../extras-aula-1/icones/home-background.svg') no-repeat; /* Se refere a imagem de fundo */
+    background-position: 35vw bottom;
+}
+
+#page-home .content{
+    width: 90%;
+    max-width:1100px;  
+    height: 100%;
+
+    margin: 0 auto;  /* Se referete a centralização das colunas do lado esquerdo*/
+
+    display: flex;
+    flex-direction: column;
+}
+
+#page-home header {
+
+    margin-top: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* serve pra colocar espaço em line entre dois box */
+
+}
+
+#page-home header a {
+    display: flex;
+
+    color: var(--title-color);;  /* parte referente a frase cadastre um ponto de coletra - cor e fonte */
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+#page-home header a span{
+    margin-right: 16px;
+    display: flex;
+
+    background-image: url('../extras-aula-1/icones/log-in.svg'); /* parte referente ao ícone ao lado esquerdo da frase cadastre um ponto de coleta */
+
+    width: 20px;
+    height: 20px;
+}
+
+#page-home main {
+    max-width: 560px; 
+    
+    flex: 1;
+
+    display: flex; /* Se referete a centralização das colunas do lado esquerdo*/
+    flex-direction: column;
+    justify-content: center;
+}
+
+#page-home main h1 {
+    font-size: 54px; /* tamanho da letra da frase seu marketplace de coleta de residuos*/
+}
+
+#page-home main p {
+    font-size: 24px;
+    line-height: 38px; /* tamanho da letra da frase Ajudamos pessoas a ...*/
+    margin-top: 24px;
+}
+
+#page-home main a {
+    width: 100%;
+    max-width: 360px;
+    height: 72px;
+
+    border-radius: 8px;
+
+    display: flex;          /* Referente ao botão de pesquisa pontos de coleta*/
+    align-items: center;
+
+    margin-top: 40px;
+
+    background-color: var(--primary-color);
+
+    transition: 400ms;
+
+    
+}
+
+
+#page-home main a:hover {
+    background-color: #2fb86e; /* cor Referente ao botão de pesquisa pontos de coleta*/
+
+}
+
+#page-home main a span {
+    width: 72px;
+    height: 72px;
+
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+
+    background-color: rgba(0, 0, 0, 0.08); /* Referente a caixa de botão de pesquisa*/
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#page-home main a span::after {
+    content: "";
+    background-image: url('../extras-aula-1/icones/search.svg'); /* Referente a caixa de botão de pesquisa*/
+
+    width: 20px;
+    height: 20px;
+}
+
+#page-home main a strong {
+    flex: 1;
+    color: white;           /* cor da frase dentro da caixa Referente a caixa de botão de pesquisa*/
+    
+    text-align: center;
+}
+
+@media (max-width: 900px) {             /* Serve pra controlar o que irá acontecer com os itens dentro da página caso vc ajuste o tamanho da pagina da internet */
+    #page-home {
+        background-position-x: 70vw;
+      }  
+
+      #page-home .content {
+        align-items: center;
+        text-align: center; /* Serve pra controlar o que irá acontecer com os itens dentro da página caso vc ajuste o tamanho da pagina da internet */
+      }
+
+      #page-home header a {
+          position: absolute;
+          bottom: 48px;  /* Serve pra controlar o que irá acontecer com os itens dentro da página caso vc ajuste o tamanho da pagina da internet */
+
+          left: 50%;
+          transform: translateX(-50%);
+      }
+
+      #page-home main {
+        align-items: center; /* Serve pra controlar o que irá acontecer com os itens dentro da página caso vc ajuste o tamanho da pagina da internet */
+    }
+}
